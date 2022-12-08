@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mouse Events and Regular Expression in JavaScript</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <script src="js.js"></script>
+        <link rel="stylesheet" href="css.css">
+        <style>
+            .container .pic img{
+                width: 50%;
+                height: 80%;
+            }
+        </style>
+    </head>
+</html>
+<body>
+    <br>
+    <button><a href="https://www.google.com" style="text-decoration: none; font-size: 20px; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Main Page</a></button>
+    <div class="container">        
+        <h1 align="center">Mouse Events and Regular Expression in JavaScript</h1>
+        <p>Click on the text below to see the result.</p>
+        <p id="demo">Click me to change my text color.</p>
+        <p id="demo1">Input a sentance and search for a text and replace it with other text</p>
+        <button onclick="enlarge()">Click me</button>
+
+        <p id="demo2"></p>
+        <input type="text" id="input" placeholder="Input a sentance">
+        <input type="text" id="search" placeholder="Search for a text">
+        <input type="text" id="replace" placeholder="Replace with">
+        <button onclick="replace()">Replace</button>  
+        <div class="pic">
+            <h3>Hover</h3>
+            <img src="Pics/pic4.png" onmouseenter="dog()" onmouseleave="dog()" id="pet">
+            <br>
+            <h3>Move Mouse</h3>
+            <img src="Pics/pic3.png" onmousedown="dogrun()" onmouseup="dogrun()" id="run">
+        </div>
+    </div>
+    <script>
+        var x = document.getElementById("demo");
+        x.addEventListener("click", myFunction);
+        function myFunction() 
+        {
+            x.style.color = "red";
+        }
+        var d,r;
+        function dog()
+        {
+            if(d==0)
+            {
+                document.getElementById("pet").src="Pics/pic3.png";
+                d=1;
+            }
+            else
+            {
+                document.getElementById("pet").src="Pics/pic4.png";
+                d=0;
+            }
+        }
+        function dogrun()
+        {
+            if(r==0)
+            {
+                document.getElementById("run").src="Pics/pic4.png";
+                r=1;
+            }
+            else
+            {
+                document.getElementById("run").src="Pics/pic3.png";
+                r=0;
+            }
+        }
+    </script>
+</body>
+</html>
